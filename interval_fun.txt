@@ -1,0 +1,72 @@
+// Function to check if a given date and time has elapsed based on daily interval
+function hasElapsedDaily($givenDateTime) {
+    $givenTimestamp = strtotime($givenDateTime);
+    $currentTimestamp = time(); // Get the current timestamp
+
+    // Calculate the difference in seconds between the current time and the given time
+    $timeDifference = $currentTimestamp - $givenTimestamp;
+
+    // Check if the time difference is greater than or equal to a day (86400 seconds)
+    return $timeDifference >= 86400;
+}
+
+// Function to check if a given date and time has elapsed based on weekly interval
+function hasElapsedWeekly($givenDateTime) {
+    $givenTimestamp = strtotime($givenDateTime);
+    $currentTimestamp = time(); // Get the current timestamp
+
+    // Calculate the difference in seconds between the current time and the given time
+    $timeDifference = $currentTimestamp - $givenTimestamp;
+
+    // Check if the time difference is greater than or equal to a week (604800 seconds)
+    return $timeDifference >= 604800;
+}
+
+// Function to check if a given date and time has elapsed based on monthly interval
+function hasElapsedMonthly($givenDateTime) {
+    $givenTimestamp = strtotime($givenDateTime);
+    $currentTimestamp = time(); // Get the current timestamp
+
+    // Calculate the difference in seconds between the current time and the given time
+    $timeDifference = $currentTimestamp - $givenTimestamp;
+
+    // Calculate the number of seconds in a month (30 days)
+    $secondsInMonth = 30 * 24 * 60 * 60;
+
+    // Check if the time difference is greater than or equal to a month
+    return $timeDifference >= $secondsInMonth;
+}
+
+// Function to check if a given date and time has elapsed based on yearly interval
+function hasElapsedYearly($givenDateTime) {
+    $givenTimestamp = strtotime($givenDateTime);
+    $currentTimestamp = time(); // Get the current timestamp
+
+    // Calculate the difference in seconds between the current time and the given time
+    $timeDifference = $currentTimestamp - $givenTimestamp;
+
+    // Calculate the number of seconds in a year (365 days)
+    $secondsInYear = 365 * 24 * 60 * 60;
+
+    // Check if the time difference is greater than or equal to a year
+    return $timeDifference >= $secondsInYear;
+}
+
+// Example usage:
+$givenDateTime = "2024-02-20 10:00:00";
+
+if (hasElapsedDaily($givenDateTime)) {
+    echo "A day has elapsed since the given date and time.\n";
+}
+
+if (hasElapsedWeekly($givenDateTime)) {
+    echo "A week has elapsed since the given date and time.\n";
+}
+
+if (hasElapsedMonthly($givenDateTime)) {
+    echo "A month has elapsed since the given date and time.\n";
+}
+
+if (hasElapsedYearly($givenDateTime)) {
+    echo "A year has elapsed since the given date and time.\n";
+}
